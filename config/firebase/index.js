@@ -3,12 +3,12 @@ import { getAuth, GoogleAuthProvider, browserLocalPersistence } from "firebase/a
 
 const config = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_APP_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_SENDER_ID,
-  appId: process.env.FIREBASE_APP_ID,
-  measurementId: process.env.FIREBASE_MENSUREMENT_ID,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_APP_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MENSUREMENT_ID,
 }
 
 console.log(config)
@@ -24,4 +24,7 @@ auth.useDeviceLanguage()
 
 export const PERSISTENCE_MODE = browserLocalPersistence;
 
-export default app
+export const firebase = {
+  app,
+  auth
+}
